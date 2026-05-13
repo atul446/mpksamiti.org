@@ -54,3 +54,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         }
     });
 });
+
+// Calculate dynamic years of service
+const yearsOfServiceEl = document.getElementById('years-of-service');
+if (yearsOfServiceEl) {
+    const establishmentDate = new Date('2022-08-24');
+    const currentDate = new Date();
+    let years = currentDate.getFullYear() - establishmentDate.getFullYear();
+    const m = currentDate.getMonth() - establishmentDate.getMonth();
+    if (m < 0 || (m === 0 && currentDate.getDate() < establishmentDate.getDate())) {
+        years--;
+    }
+    yearsOfServiceEl.innerText = years + '+';
+}
