@@ -98,6 +98,26 @@ h6,
 
 
 /*** Navbar ***/
+.navbar-brand .brand-name {
+    font-family: 'Inter', 'Heebo', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 260px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
 .navbar .navbar-nav .nav-link {
     padding: 30px 15px;
     color: var(--dark);
