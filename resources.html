@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Reports | MPK Samiti</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .resources-hero {
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            text-align: center;
+        }
+        .resources-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .file-group {
+            margin-bottom: 4rem;
+        }
+        .file-group-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .file-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+            border: 1px solid #E2E8F0;
+        }
+        .file-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+            border-color: var(--primary-light);
+        }
+        .file-icon {
+            font-size: 2rem;
+            color: #EF4444; /* PDF Red */
+        }
+        .file-info {
+            flex: 1;
+            overflow: hidden;
+        }
+        .file-name {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .file-download {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .empty-state {
+            padding: 2rem;
+            background: #F8FAFC;
+            border: 2px dashed #CBD5E1;
+            border-radius: 12px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>MPK Samiti</h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#branches">Our Work</a>
+            <a href="resources.html" style="color: var(--primary);">Resources & Reports</a>
+            <a href="index.html#contact" class="btn-primary">Donate Us</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="resources-hero">
+        <h1>Resources & Reports</h1>
+        <p>Transparency is at the core of our organization. Access all our official documents, audits, and reports below.</p>
+    </header>
+
+    <main class="section">
+        
+        <!-- Annual Progress Report Group -->
+        <div class="file-group">
+            <h2 class="file-group-title"><i class="fas fa-chart-line" style="margin-right: 10px;"></i>Annual Progress Report</h2>
+            <div class="empty-state">
+                <i class="fas fa-folder-open" style="font-size: 2rem; color: #94A3B8; margin-bottom: 1rem; display: block;"></i>
+                <p>New reports will be uploaded here soon.</p>
+            </div>
+        </div>
+
+        <!-- Audit Reports Group -->
+        <div class="file-group">
+            <h2 class="file-group-title"><i class="fas fa-file-invoice-dollar" style="margin-right: 10px;"></i>Audit Reports</h2>
+            <div class="file-grid">
+                <a href="docs/Audit_2024.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="Audit_2024.pdf">Audit_2024.pdf</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/audit_2025.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="audit_2025.pdf">audit_2025.pdf</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPKS AUDIT REPORT FY 2223.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPKS AUDIT REPORT FY 2223.pdf">MPKS AUDIT REPORT FY 2223</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPKS AUDIT REPORT FY 2324.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPKS AUDIT REPORT FY 2324.pdf">MPKS AUDIT REPORT FY 2324</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPKS AUDIT REPORT FY 2425.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPKS AUDIT REPORT FY 2425.pdf">MPKS AUDIT REPORT FY 2425</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/VWIPS AUDIT REPORT FY 2324.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="VWIPS AUDIT REPORT FY 2324.pdf">VWIPS AUDIT REPORT FY 2324</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Income Tax Returns (ITR) Group -->
+        <div class="file-group">
+            <h2 class="file-group-title"><i class="fas fa-file-alt" style="margin-right: 10px;"></i>Income Tax Returns (ITR)</h2>
+            <div class="file-grid">
+                <a href="docs/ITR_2025.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="ITR_2025.pdf">ITR_2025.pdf</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPK SOCIETY ITR AY 2324.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPK SOCIETY ITR AY 2324.pdf">MPK SOCIETY ITR AY 2324</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Registration & Incorporation Group -->
+        <div class="file-group">
+            <h2 class="file-group-title"><i class="fas fa-certificate" style="margin-right: 10px;"></i>Registration & Incorporation</h2>
+            <div class="file-grid">
+                <a href="docs/MPK SOCIETY REG CERTIFICATE.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPK SOCIETY REG CERTIFICATE.pdf">MPK SOCIETY REG CERTIFICATE</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPK SOCIETY NIYAMAWALI AND GYAPAN.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPK SOCIETY NIYAMAWALI AND GYAPAN.pdf">NIYAMAWALI AND GYAPAN</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/Rajistrikaran_and_stamp_vibhag.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="Rajistrikaran_and_stamp_vibhag.pdf">Rajistrikaran and Stamp Vibhag</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/RecognitionCertificate.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="RecognitionCertificate.pdf">Recognition Certificate</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/RecognitionCertificate (3).pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="RecognitionCertificate (3).pdf">Recognition Certificate (3)</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/NPODARPAN MPK.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="NPODARPAN MPK.pdf">NPODARPAN MPK</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/मातृपितृकृपा_शैक्षिक_स्वास्थ्य_पर्यावरण_खेल_संबंध_सामाजिक_विकास_और_कल्याण_समिति_बांदा_registration.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="Registration (Hindi)">Registration (Hindi)</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- General Information (Section 27/28) Group -->
+        <div class="file-group">
+            <h2 class="file-group-title"><i class="fas fa-info-circle" style="margin-right: 10px;"></i>General Information (Section 27/28)</h2>
+            <div class="file-grid">
+                <a href="docs/MPKS 2728 INFO 2122.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPKS 2728 INFO 2122.pdf">SEC 27/28 INFO 21-22</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPKS SEC 2728 INFO 2223.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPKS SEC 2728 INFO 2223.pdf">SEC 27/28 INFO 22-23</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPKS SEC 2728 INFO 2324.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPKS SEC 2728 INFO 2324.pdf">SEC 27/28 INFO 23-24</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPKS SEC 2728 INFO 2425.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPKS SEC 2728 INFO 2425.pdf">SEC 27/28 INFO 24-25</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bank & PAN Group -->
+        <div class="file-group">
+            <h2 class="file-group-title"><i class="fas fa-university" style="margin-right: 10px;"></i>Bank & PAN Details</h2>
+            <div class="file-grid">
+                <a href="docs/MPK SOCIETY BANK ACCOUNT.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPK SOCIETY BANK ACCOUNT.pdf">BANK ACCOUNT</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+                <a href="docs/MPK SOCIETY PAN CARD.pdf" target="_blank" class="file-card">
+                    <i class="fas fa-file-pdf file-icon"></i>
+                    <div class="file-info"><div class="file-name" title="MPK SOCIETY PAN CARD.pdf">PAN CARD</div></div>
+                    <i class="fas fa-download file-download"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>MPK Samiti</h3>
+                <p style="margin-bottom: 1.5rem;">Dedicated to fostering a compassionate and empowered society where every individual receives equal opportunities and dignity.</p>
+                <div class="social-links">
+                    <a href="https://youtube.com/@mpksamiti?si=285k2r0fLWzDkqzi" target="_blank" title="MPK Samiti YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://youtube.com/@svpsbanda?si=4Z3p0slbdm7WLPEk" target="_blank" title="School YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/1C8wGXHV4g/" target="_blank" title="School Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://g.page/r/CQDMLczvJdxUEBI/review" target="_blank" title="Google Reviews"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#branches">Our Programs</a></li>
+                    <li><a href="resources.html">Resources & Reports</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 1rem; display: flex; gap: 10px;">
+                        <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--primary-light);"></i>
+                        <span>House No. 97, Near Ram Marriage Hall, Banda, District Sagar, Madhya Pradesh, India, 470335</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; gap: 10px;">
+                        <i class="fas fa-phone" style="margin-top: 5px; color: var(--primary-light);"></i>
+                        <a href="tel:+917869622202">+91 7869622202</a>
+                    </li>
+                    <li style="display: flex; gap: 10px;">
+                        <i class="fas fa-envelope" style="margin-top: 5px; color: var(--primary-light);"></i>
+                        <a href="mailto:satishjain.apexs@gmail.com">satishjain.apexs@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MPK Samiti. All Rights Reserved. | <a href="#" style="text-decoration: underline;">Privacy Policy</a> | <a href="#" style="text-decoration: underline;">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

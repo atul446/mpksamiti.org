@@ -1,0 +1,103 @@
+i want to make mpksamiti website for public awareness and for our works. mpksamiti has is npo certificate also.
+main page should show the works of mpksamiti. for example , we have school, old age home, drug deaddiction center, sports academy, etc. along with social works, we also provide help to poor and needy people.
+**Hosting Plan:** Initially deploying to GitHub Pages (`https://atul446.github.io/mpksamiti.org/`), with a future migration to the custom domain `http://www.mpksamiti.org/`.
+### Website Structure & Layout Plan (Inspired by vasundharawelfare.org)
+
+**1. Navigation Bar & Header:**
+- Logo: MPK Samiti (मातृ-पितृ कृपा शैक्षिक स्वास्थ्य पर्यावरण खेल संबंध सामाजिक विकास और कल्याण समिति बांदा)
+- Links: Home | About Us | Branches & Programs | Resources & Reports | Gallery | Contact Us
+- Call to Action: "Donate Us" Button
+
+**2. Main Page Sections:**
+- **Hero Section:** High-quality image showing social work, with a compelling headline (Vision/Mission).
+- **About Us Summary:** Brief history and registration info (NPO certificate, etc.). 
+- **Our Key Branches / Works (Organizational Programs):**
+  * *School & Education:* Special School (श्री विद्याकुंज स्पेशल स्कूल) / Education & Training Center
+  * *Social & Senior Care:* Old Age Home (सशुल्क एवं निःशुल्क वरिष्ठ जन आवास गृह)
+  * *De-addiction:* Drug De-addiction and Rehabilitation Center (नशाबंदी एवं नशामुक्ति प्रचार प्रसार केन्द्र)
+  * *Sports & Development:* Sports Academy (श्री विद्याकुंज खेल एकेडमी)
+  * *Women & Child Development:* Mahila Shashaktikaran Kendra (बाल विकास एवं महिला सशक्तिकरण केंद्र)
+  * *Environment:* Environment Conservation Center (पर्यावरण संरक्षण केन्द्र)
+- **Impact & Reach:** Statistics section (e.g., Number of people helped, programs organized).
+- **Social Work & Community:** Section highlighting help provided to poor and needy.
+
+**3. Resources & Governance (Internal Governance):**
+- Dedicated page or section to host PDF documents (Audit Reports, ITR, Registration Certificates, NPO Darpan, Niyamawali).
+
+**4. Footer:**
+- Address & Contact Info (Phone, Email)
+- Social Media Links: 
+  - YouTube (MPK Samiti): https://youtube.com/@mpksamiti?si=285k2r0fLWzDkqzi
+  - YouTube (School): https://youtube.com/@svpsbanda?si=4Z3p0slbdm7WLPEk
+  - Facebook (School): https://www.facebook.com/share/1C8wGXHV4g/
+  - Google Review Link: https://g.page/r/CQDMLczvJdxUEBI/review
+- Quick Links to Privacy Policy, Terms & Conditions.
+### Document Files Available (docs/):
+- Audit_2024.pdf
+- ITR_2025.pdf
+- MPK SOCIETY BANK ACCOUNT.pdf
+- MPK SOCIETY ITR AY 2324.pdf
+- MPK SOCIETY NIYAMAWALI AND GYAPAN.pdf
+- MPK SOCIETY PAN CARD.pdf
+- MPK SOCIETY REG CERTIFICATE.pdf
+- MPKS 2728 INFO 2122.pdf
+- MPKS AUDIT REPORT FY 2223.pdf
+- MPKS AUDIT REPORT FY 2324.pdf
+- MPKS AUDIT REPORT FY 2425.pdf
+- MPKS SEC 2728 INFO 2223.pdf
+- MPKS SEC 2728 INFO 2324.pdf
+- MPKS SEC 2728 INFO 2425.pdf
+- NPODARPAN MPK.pdf
+- Rajistrikaran_and_stamp_vibhag.pdf
+- RecognitionCertificate (3).pdf
+- RecognitionCertificate.pdf
+- VWIPS AUDIT REPORT FY 2324.pdf
+- audit_2025.pdf
+- मातृपितृकृपा_शैक्षिक_स्वास्थ्य_पर्यावरण_खेल_संबंध_सामाजिक_विकास_और_कल्याण_समिति_बांदा_registration.pdf
+
+### Image Files Available (images/):
+- instagram_vidyakunj_banda.png
+- rename_images.py
+- rename_logos_manual.py
+- rename_remaining.py
+- rename_various.py
+- run_ocr.sh
+- sports_awards.jpeg
+- sports_awards_team_photo.jpeg
+- मातृपितृकृपा_शैक्षिक_स्वास्थ्य_पर्यावरण_खेल_संबंध_सामाजिक_विकास_और_कल्याण_समिति_बांदा.jpeg
+- विद्या_कृपा_नशा_बंदी_एवं_नशा_मुक्ति_प्रचार_प्रसार_केंद्र_बंडा_जिला_सागर_मध्य_प्रदेश.jpeg
+- विद्या_कृपा_नशा_मुक्ति_एवं_पुनर्वास_केंद्र_बंडा_जिला_सागर_मध्य_प्रदेश.jpeg
+- विद्या_कृपा_नशाबंदी_एवं_नशामुक्ति_प्रचार_प्रसार_केन्द्र_बंडा.jpeg
+- विद्या_कृपा_नशाबंदी_एवं_नशामुक्ति_प्रचार_प्रसार_केन्द्र_बंडा_1.jpeg
+- विद्या_कृपा_नशामुक्ति_एवं_पुनर्वास_केन्द्र_बंडा.jpeg
+- विद्या_कृपा_नशामुक्ति_एवं_पुनर्वास_केन्द्र_बंडा_1.jpeg
+- विद्या_छाया_पर्यावरण_संरक्षण_केंद्र_बंडा_जिला_सागर.jpeg
+- विद्या_छाया_पर्यावरण_संरक्षण_केन्द्र.jpeg
+- विद्या_छाया_पर्यावरण_संरक्षण_केन्द्र_1.jpeg
+- विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा.jpeg
+- विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा_1.jpeg
+- विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा_2.jpeg
+- विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा_3.jpeg
+- विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा_4.jpeg
+- विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठजन_आवास_गृह_बंडा_सागर.jpeg
+- विद्या_संस्कृति_साहित्य_एवं_कला_संरक्षण_केंद्र_बंडा_जिला_सागर_मध्य_प्रदेश.jpeg
+- विद्या_संस्कृति_साहित्य_एवं_कला_संरक्षण_केन्द्र_बंडा.jpeg
+- विद्या_संस्कृति_साहित्य_एवं_कला_संरक्षण_केन्द्र_बंडा_1.jpeg
+- विद्या_संस्कृति_साहित्य_एवं_कला_संरक्षण_केन्द्र_बंडा_2.jpeg
+- विद्या_संस्कृति_साहित्य_एवं_कला_संरक्षण_केन्द्र_बंडा_3.jpeg
+- विद्या_स्वास्थ्य_केंद्र_जिला_सागर_मध्य_प्रदेश.jpeg
+- विद्या_स्वास्थ्य_केन्द्र.jpeg
+- विद्या_स्वास्थ्य_केन्द्र_1.jpeg
+- श्री_विद्या_बाल_विकास_एवं_सशक्तिकरण_केन्द्र.jpeg
+- श्री_विद्या_बाल_विकास_एवं_सशक्तिकरण_केन्द्र_1.jpeg
+- श्री_विद्या_बालविकास_एवं_महिला_सशक्तिकरण_केंद्र_बंडा_जिला_सागर.jpeg
+- श्री_विद्या_शिक्षा_एवं_प्रशिक्षण_केंद्र_बंडा_जिला_सागर_मध्य_प्रदेश.jpeg
+- श्री_विद्या_शिक्षा_एवं_प्रशिक्षण_केन्द्र.jpeg
+- श्री_विद्या_शिक्षा_एवं_प्रशिक्षण_केन्द्र_1.jpeg
+- श्री_विद्या_सामाजिक_न्याय_एवं_दिव्यांग_जन_सशक्तिकरण_केंद्र_बंडा_जिला_सागर_मध्य_प्रदेश.jpeg
+- श्री_विद्याकुंज_खेल_अकादमी_बंडा_जिला_सागर.jpeg
+- श्री_विद्याकुंज_खेल_अकेडमी_बंडा.jpeg
+- श्री_विद्याकुंज_खेल_अकेडमी_बंडा_1.jpeg
+- श्री_विद्याकुंज_स्पेशल_स्कूल_बंडा.jpeg
+- श्री_विद्याकुंज_स्पेशल_स्कूल_बंडा_1.jpeg
+- श्री_विद्याकुंज_स्पेशल_स्कूल_बंडा_जिला_सागर_मध्य_प्रदेश.jpeg
