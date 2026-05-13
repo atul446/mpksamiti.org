@@ -100,13 +100,10 @@ h6,
 /*** Navbar ***/
 .navbar-brand .brand-name {
     font-family: 'Inter', 'Heebo', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--primary);
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 260px;
     display: inline-block;
     vertical-align: middle;
 }
