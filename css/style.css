@@ -522,4 +522,67 @@ footer {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+    .floating-social {
+        display: none;
+    }
 }
+
+/* ================= Floating Social Sidebar ================= */
+.floating-social {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 99999;
+    box-shadow: -3px 0 15px rgba(0,0,0,0.15);
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+}
+
+.floating-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    font-size: 1.1rem;
+    color: white;
+    transition: var(--transition);
+    position: relative;
+}
+
+.floating-social a::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.75);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 5px 0 0 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.floating-social a:hover::before {
+    opacity: 1;
+}
+
+.floating-social a:hover {
+    filter: brightness(1.15);
+    width: 52px;
+}
+
+.floating-social .fs-youtube    { background-color: #FF0000; }
+.floating-social .fs-youtube2   { background-color: #cc0000; }
+.floating-social .fs-facebook   { background-color: #1877F2; }
+.floating-social .fs-instagram  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.floating-social .fs-google     { background-color: #4285F4; }
+.floating-social .fs-donate     { background-color: var(--primary); }
