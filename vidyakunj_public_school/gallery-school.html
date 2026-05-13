@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gallery | SHRI VIDYAKUNJ PUBLIC SCHOOL</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Gallery - SHRI VIDYAKUNJ PUBLIC SCHOOL" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .gallery-filter-btn {
+            padding: 0.4rem 1.2rem;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .gallery-filter-btn:hover,
+        .gallery-filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            cursor: pointer;
+        }
+        .gallery-item.hide { display: none; }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
+            padding: 1.5rem 1rem 0.75rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay span {
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1rem; right: 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .lightbox-caption {
+            color: rgba(255,255,255,0.8);
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/logo.jpg" alt="SVPS Logo" /><span class="brand-name">SHRI VIDYAKUNJ PUBLIC SCHOOL</span>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="classes.html" class="nav-item nav-link">Classes</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                            <a href="facility.html" class="dropdown-item">School Facilities</a>
+                            <a href="team.html" class="dropdown-item">Popular Teachers</a>
+                            <a href="call-to-action.html" class="dropdown-item">Become A Teacher</a>
+                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        </div>
+                    </div>
+                    <a href="gallery-school.html" class="nav-item nav-link active">Gallery</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                </div>
+                <a href="../index.html" class="btn btn-outline-secondary rounded-pill px-3 d-none d-lg-block ms-2">← MPK Samiti</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        <!-- Page Header Start -->
+        <div class="container-xxl py-5 page-header position-relative mb-5">
+            <div class="container py-5">
+                <h1 class="display-2 text-white animated slideInDown mb-4">Our Gallery</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Gallery</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <!-- Gallery Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Our Memories</h1>
+                    <p>Glimpses of celebrations, learning, and life at SHRI VIDYAKUNJ PUBLIC SCHOOL.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="gallery-filters wow fadeInUp" data-wow-delay="0.2s">
+                    <button class="gallery-filter-btn active" data-filter="all">All</button>
+                    <button class="gallery-filter-btn" data-filter="festivals">Festivals & Celebrations</button>
+                    <button class="gallery-filter-btn" data-filter="birthday">Birthday Celebrations</button>
+                    <button class="gallery-filter-btn" data-filter="school-life">School Life</button>
+                    <button class="gallery-filter-btn" data-filter="events">Events & Seminars</button>
+                    <button class="gallery-filter-btn" data-filter="teachers">Teachers Discussion</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" id="gallery-grid">
+
+                    <!-- Festivals & Celebrations -->
+                    <div class="gallery-item wow fadeInUp" data-category="festivals" data-wow-delay="0.1s" data-caption="Diwali & Ramleela">
+                        <img src="School multimedia/diwali_ramleela.jpg" alt="Diwali Ramleela Celebration">
+                        <div class="gallery-overlay"><span>Diwali & Ramleela</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="festivals" data-wow-delay="0.15s" data-caption="Diwali Celebration">
+                        <img src="School multimedia/school_diwali_celebration.jpeg" alt="School Diwali Celebration">
+                        <div class="gallery-overlay"><span>Diwali Celebration</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="festivals" data-wow-delay="0.2s" data-caption="Rakshabandhan – Rakhi Making Competition">
+                        <img src="School multimedia/rakshbandhan_rakhi_making_competition.jpg" alt="Rakhi Making Competition">
+                        <div class="gallery-overlay"><span>Rakhi Making Competition</span></div>
+                    </div>
+
+                    <!-- Birthday Celebrations -->
+                    <div class="gallery-item wow fadeInUp" data-category="birthday" data-wow-delay="0.1s" data-caption="Student Birthday Celebration">
+                        <img src="School multimedia/student_birthday_celebration.jpg" alt="Birthday Celebration">
+                        <div class="gallery-overlay"><span>Birthday Celebration</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="birthday" data-wow-delay="0.15s" data-caption="Student Birthday Celebration">
+                        <img src="School multimedia/student_birthday_celebration_2.jpg" alt="Birthday Celebration 2">
+                        <div class="gallery-overlay"><span>Birthday Celebration</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="birthday" data-wow-delay="0.2s" data-caption="Student Birthday Celebration">
+                        <img src="School multimedia/student_birthday_celebration_3.jpg" alt="Birthday Celebration 3">
+                        <div class="gallery-overlay"><span>Birthday Celebration</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="birthday" data-wow-delay="0.25s" data-caption="Student Birthday Celebration">
+                        <img src="School multimedia/student_birthday_celebration_4.jpg" alt="Birthday Celebration 4">
+                        <div class="gallery-overlay"><span>Birthday Celebration</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="birthday" data-wow-delay="0.3s" data-caption="Student Birthday Celebration">
+                        <img src="School multimedia/student_birthday_celebration_5.jpg" alt="Birthday Celebration 5">
+                        <div class="gallery-overlay"><span>Birthday Celebration</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="birthday" data-wow-delay="0.35s" data-caption="Student Birthday Celebration">
+                        <img src="School multimedia/student_birthday_celebration_6.jpg" alt="Birthday Celebration 6">
+                        <div class="gallery-overlay"><span>Birthday Celebration</span></div>
+                    </div>
+
+                    <!-- School Life -->
+                    <div class="gallery-item wow fadeInUp" data-category="school-life" data-wow-delay="0.1s" data-caption="Our Students">
+                        <img src="School multimedia/school_childer.jpg" alt="School Children">
+                        <div class="gallery-overlay"><span>Our Students</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="school-life" data-wow-delay="0.15s" data-caption="School Poster">
+                        <img src="School multimedia/school_poster.jpg" alt="School Poster">
+                        <div class="gallery-overlay"><span>School Poster</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="school-life" data-wow-delay="0.2s" data-caption="News Coverage">
+                        <img src="School multimedia/news_article.jpeg" alt="News Article">
+                        <div class="gallery-overlay"><span>News Coverage</span></div>
+                    </div>
+
+                    <!-- Events & Seminars -->
+                    <div class="gallery-item wow fadeInUp" data-category="events" data-wow-delay="0.1s" data-caption="Parenting Seminar">
+                        <img src="School multimedia/parenting_seminar.jpg" alt="Parenting Seminar">
+                        <div class="gallery-overlay"><span>Parenting Seminar</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="events" data-wow-delay="0.15s" data-caption="Teachers' Day Celebration">
+                        <img src="School multimedia/teachers_day.jpg" alt="Teachers Day">
+                        <div class="gallery-overlay"><span>Teachers' Day</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="events" data-wow-delay="0.2s" data-caption="Team Outing">
+                        <img src="School multimedia/team_outing.jpg" alt="Team Outing">
+                        <div class="gallery-overlay"><span>Team Outing</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="events" data-wow-delay="0.25s" data-caption="Training by Satish Jain">
+                        <img src="School multimedia/training_given_by_satish_jain.jpg" alt="Training by Satish Jain">
+                        <div class="gallery-overlay"><span>Training Session</span></div>
+                    </div>
+
+                    <!-- Teachers Discussion -->
+                    <div class="gallery-item wow fadeInUp" data-category="teachers" data-wow-delay="0.1s" data-caption="Teachers Discussion">
+                        <img src="School multimedia/teachers_discussion/IMG-20240531-WA0013.jpg" alt="Teachers Discussion">
+                        <div class="gallery-overlay"><span>Teachers Discussion</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="teachers" data-wow-delay="0.15s" data-caption="Teachers Discussion">
+                        <img src="School multimedia/teachers_discussion/IMG-20240531-WA0015.jpg" alt="Teachers Discussion">
+                        <div class="gallery-overlay"><span>Teachers Discussion</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="teachers" data-wow-delay="0.2s" data-caption="Teachers Discussion">
+                        <img src="School multimedia/teachers_discussion/IMG-20240531-WA0016.jpg" alt="Teachers Discussion">
+                        <div class="gallery-overlay"><span>Teachers Discussion</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="teachers" data-wow-delay="0.25s" data-caption="Teachers Meeting">
+                        <img src="School multimedia/teachers_discussion/IMG-20240605-WA0011.jpg" alt="Teachers Meeting">
+                        <div class="gallery-overlay"><span>Teachers Meeting</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="teachers" data-wow-delay="0.3s" data-caption="Teachers Meeting">
+                        <img src="School multimedia/teachers_discussion/IMG-20240605-WA0013.jpg" alt="Teachers Meeting">
+                        <div class="gallery-overlay"><span>Teachers Meeting</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="teachers" data-wow-delay="0.35s" data-caption="Teachers Meeting">
+                        <img src="School multimedia/teachers_discussion/IMG-20240605-WA0014.jpg" alt="Teachers Meeting">
+                        <div class="gallery-overlay"><span>Teachers Meeting</span></div>
+                    </div>
+
+                    <div class="gallery-item wow fadeInUp" data-category="teachers" data-wow-delay="0.4s" data-caption="Teachers Meeting">
+                        <img src="School multimedia/teachers_discussion/IMG-20240605-WA0015.jpg" alt="Teachers Meeting">
+                        <div class="gallery-overlay"><span>Teachers Meeting</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Gallery End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Get In Touch</h3>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>97, WARD NO.13, KISHANI MUHALLA, BARAYTHA ROAD</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+917869622202</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@vidyakunjschool.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/1C8wGXHV4g/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://youtube.com/@svpsbanda?si=4Z3p0slbdm7WLPEk" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/vidyakunj_banda?igsh=eGVnbXhvMHo0MnRj" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="text-white mb-4">Quick Links</h3>
+                        <a class="btn btn-link text-white-50" href="index.html">Home</a>
+                        <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                        <a class="btn btn-link text-white-50" href="classes.html">Classes</a>
+                        <a class="btn btn-link text-white-50" href="gallery-school.html">Gallery</a>
+                        <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="../index.html">← MPK Samiti</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">SHRI VIDYAKUNJ PUBLIC SCHOOL</a>, All Right Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Gallery Filter
+        document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCaption.textContent = item.getAttribute('data-caption') || '';
+                lightbox.classList.add('open');
+            });
+        });
+
+        document.getElementById('lightbox-close').addEventListener('click', () => {
+            lightbox.classList.remove('open');
+            lightboxImg.src = '';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('open');
+                lightboxImg.src = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
