@@ -6,6 +6,33 @@
     <title>Gallery | MPK Samiti</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--primary-light);
+            background: transparent;
+            color: var(--primary-dark);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-light);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        .gallery-item.hide {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -35,75 +62,86 @@
     </header>
 
     <main class="section">
-        <div class="gallery-grid">
+        
+        <!-- Filter Buttons -->
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="health">Health & Rehab</button>
+            <button class="filter-btn" data-filter="education">Education</button>
+            <button class="filter-btn" data-filter="social">Social & Elderly</button>
+            <button class="filter-btn" data-filter="environment">Environment</button>
+            <button class="filter-btn" data-filter="sports">Sports</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
             
-            <div class="gallery-item" data-aos="fade-up">
+            <div class="gallery-item" data-category="health">
                 <img src="images/various_parts_of_samiti/विद्या_कृपा_नशाबंदी_एवं_नशामुक्ति_प्रचार_प्रसार_केन्द्र_बंडा.jpeg" alt="De-addiction Center">
                 <div class="gallery-overlay">
                     <h3>De-addiction Center</h3>
                 </div>
             </div>
             
-            <div class="gallery-item" data-aos="fade-up">
+            <div class="gallery-item" data-category="health">
                 <img src="images/various_parts_of_samiti/विद्या_कृपा_नशामुक्ति_एवं_पुनर्वास_केन्द्र_बंडा.jpeg" alt="Rehabilitation Center">
                 <div class="gallery-overlay">
                     <h3>Rehabilitation Center</h3>
                 </div>
             </div>
             
-            <div class="gallery-item" data-aos="fade-up">
-                <img src="images/various_parts_of_samiti/विद्या_छाया_पर्यावरण_संरक्षण_केन्द्र.jpeg" alt="Environment Conservation">
-                <div class="gallery-overlay">
-                    <h3>Environment Conservation</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-aos="fade-up">
-                <img src="images/various_parts_of_samiti/विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा.jpeg" alt="Senior Citizen Home">
-                <div class="gallery-overlay">
-                    <h3>Senior Citizen Home</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-aos="fade-up">
-                <img src="images/various_parts_of_samiti/विद्या_संस्कृति_साहित्य_एवं_कला_संरक्षण_केन्द्र_बंडा.jpeg" alt="Art & Culture Preservation">
-                <div class="gallery-overlay">
-                    <h3>Art & Culture Preservation</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-aos="fade-up">
+            <div class="gallery-item" data-category="health">
                 <img src="images/various_parts_of_samiti/विद्या_स्वास्थ्य_केन्द्र.jpeg" alt="Health Center">
                 <div class="gallery-overlay">
                     <h3>Health Center</h3>
                 </div>
             </div>
-            
-            <div class="gallery-item" data-aos="fade-up">
+
+            <div class="gallery-item" data-category="education">
                 <img src="images/various_parts_of_samiti/श्री_विद्या_बाल_विकास_एवं_सशक्तिकरण_केन्द्र.jpeg" alt="Child Development">
                 <div class="gallery-overlay">
                     <h3>Child Development</h3>
                 </div>
             </div>
             
-            <div class="gallery-item" data-aos="fade-up">
+            <div class="gallery-item" data-category="education">
                 <img src="images/various_parts_of_samiti/श्री_विद्या_शिक्षा_एवं_प्रशिक्षण_केन्द्र.jpeg" alt="Education & Training">
                 <div class="gallery-overlay">
                     <h3>Education & Training</h3>
                 </div>
             </div>
-            
-            <div class="gallery-item" data-aos="fade-up">
-                <img src="images/various_parts_of_samiti/श्री_विद्याकुंज_खेल_अकेडमी_बंडा.jpeg" alt="Sports Academy">
-                <div class="gallery-overlay">
-                    <h3>Sports Academy</h3>
-                </div>
-            </div>
-            
-            <div class="gallery-item" data-aos="fade-up">
+
+            <div class="gallery-item" data-category="education">
                 <img src="images/various_parts_of_samiti/श्री_विद्याकुंज_स्पेशल_स्कूल_बंडा.jpeg" alt="Special School">
                 <div class="gallery-overlay">
                     <h3>Special School</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="environment">
+                <img src="images/various_parts_of_samiti/विद्या_छाया_पर्यावरण_संरक्षण_केन्द्र.jpeg" alt="Environment Conservation">
+                <div class="gallery-overlay">
+                    <h3>Environment Conservation</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="social">
+                <img src="images/various_parts_of_samiti/विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा.jpeg" alt="Senior Citizen Home">
+                <div class="gallery-overlay">
+                    <h3>Senior Citizen Home</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="social">
+                <img src="images/various_parts_of_samiti/विद्या_संस्कृति_साहित्य_एवं_कला_संरक्षण_केन्द्र_बंडा.jpeg" alt="Art & Culture Preservation">
+                <div class="gallery-overlay">
+                    <h3>Art & Culture Preservation</h3>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="sports">
+                <img src="images/various_parts_of_samiti/श्री_विद्याकुंज_खेल_अकेडमी_बंडा.jpeg" alt="Sports Academy">
+                <div class="gallery-overlay">
+                    <h3>Sports Academy</h3>
                 </div>
             </div>
             
@@ -160,5 +198,35 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Gallery Filtering Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.classList.remove('hide');
+                            // Trigger reflow to restart CSS animation
+                            void item.offsetWidth;
+                            item.style.animation = "fadeInUp 0.5s ease forwards";
+                        } else {
+                            item.classList.add('hide');
+                            item.style.animation = "";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
