@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Us | MPK Samiti</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .donate-hero {
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            text-align: center;
+        }
+        .donate-hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .donate-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .bank-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary);
+            margin-bottom: 3rem;
+        }
+        .bank-card h2 {
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .bank-detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        .bank-detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: var(--text-muted);
+            width: 40%;
+        }
+        .detail-value {
+            font-weight: 700;
+            color: var(--text-main);
+            width: 60%;
+            text-align: right;
+            word-break: break-word;
+        }
+        .upi-section {
+            text-align: center;
+            padding: 3rem;
+            background: #F8FAFC;
+            border-radius: 20px;
+            border: 2px dashed #CBD5E1;
+            margin-bottom: 3rem;
+        }
+        .upi-section i {
+            font-size: 3rem;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+        .copy-btn {
+            background: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 0.8rem;
+        }
+        .copy-btn:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logos/मातृपितृकृपा_शैक्षिक_स्वास्थ्य_पर्यावरण_खेल_संबंध_सामाजिक_विकास_और_कल्याण_समिति_बांदा.jpeg" alt="MPK Samiti Logo">
+            <h1>MPK Samiti</h1>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#branches">Our Work</a>
+            <a href="resources.html">Resources & Reports</a>
+            <a href="donate.html" class="btn-primary" style="color: white !important;">Donate Us</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="donate-hero">
+        <h1>Support Our Cause</h1>
+        <p>Your contribution directly empowers children with special needs, supports senior citizens, and aids in environmental conservation.</p>
+    </header>
+
+    <main class="section donate-container">
+        
+        <!-- Bank Details Card -->
+        <div class="bank-card">
+            <h2><i class="fas fa-university" style="margin-right: 10px; color: var(--primary-light);"></i> Bank Transfer Details</h2>
+            
+            <div class="bank-detail-row">
+                <div class="detail-label">Account Name</div>
+                <div class="detail-value">MPK Samiti<br><small style="font-weight:400; color:var(--text-muted);">(मातृ-पितृ कृपा शैक्षिक स्वास्थ्य पर्यावरण खेल संबंध सामाजिक विकास और कल्याण समिति)</small></div>
+            </div>
+            
+            <div class="bank-detail-row">
+                <div class="detail-label">Account Number</div>
+                <div class="detail-value">
+                    [ Enter Account Number Here ]
+                    <!-- <button class="copy-btn"><i class="fas fa-copy"></i></button> -->
+                </div>
+            </div>
+            
+            <div class="bank-detail-row">
+                <div class="detail-label">IFSC Code</div>
+                <div class="detail-value">HDFC0005558</div>
+            </div>
+            
+            <div class="bank-detail-row">
+                <div class="detail-label">Bank Name</div>
+                <div class="detail-value">HDFC Bank Ltd</div>
+            </div>
+            
+            <div class="bank-detail-row">
+                <div class="detail-label">Branch Address</div>
+                <div class="detail-value">Ground Floor, Shanti Nagar, Main Road Banda, District Sagar, M.P. - 470335</div>
+            </div>
+            
+            <div class="bank-detail-row">
+                <div class="detail-label">Account Type</div>
+                <div class="detail-value">Trust / Association / Society (TASC CA)</div>
+            </div>
+        </div>
+
+        <!-- UPI Placeholder -->
+        <div class="upi-section">
+            <i class="fas fa-qrcode"></i>
+            <h3 style="margin-bottom: 1rem; color: var(--text-main);">Scan to Donate via UPI</h3>
+            <p style="color: var(--text-muted);">Please upload your official MPK Samiti UPI QR code here to allow instant mobile payments.</p>
+            <p style="margin-top: 10px; font-weight: bold; color: var(--primary-dark);">UPI ID: [ Add UPI ID Here ]</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3>MPK Samiti</h3>
+                <p style="margin-bottom: 1.5rem;">Dedicated to fostering a compassionate and empowered society where every individual receives equal opportunities and dignity.</p>
+                <div class="social-links">
+                    <a href="https://youtube.com/@mpksamiti?si=285k2r0fLWzDkqzi" target="_blank" title="MPK Samiti YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://youtube.com/@svpsbanda?si=4Z3p0slbdm7WLPEk" target="_blank" title="School YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/1C8wGXHV4g/" target="_blank" title="School Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://g.page/r/CQDMLczvJdxUEBI/review" target="_blank" title="Google Reviews"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#branches">Our Programs</a></li>
+                    <li><a href="resources.html">Resources & Reports</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 1rem; display: flex; gap: 10px;">
+                        <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--primary-light);"></i>
+                        <span>House No. 97, Near Ram Marriage Hall, Banda, District Sagar, Madhya Pradesh, India, 470335</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; gap: 10px;">
+                        <i class="fas fa-phone" style="margin-top: 5px; color: var(--primary-light);"></i>
+                        <a href="tel:+917869622202">+91 7869622202</a>
+                    </li>
+                    <li style="display: flex; gap: 10px;">
+                        <i class="fas fa-envelope" style="margin-top: 5px; color: var(--primary-light);"></i>
+                        <a href="mailto:satishjain.apexs@gmail.com">satishjain.apexs@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MPK Samiti. All Rights Reserved. | <a href="#" style="text-decoration: underline;">Privacy Policy</a> | <a href="#" style="text-decoration: underline;">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
