@@ -55,15 +55,94 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Calculate dynamic years of service
-const yearsOfServiceEl = document.getElementById('years-of-service');
-if (yearsOfServiceEl) {
-    const establishmentDate = new Date('2022-08-24');
-    const currentDate = new Date();
-    let years = currentDate.getFullYear() - establishmentDate.getFullYear();
-    const m = currentDate.getMonth() - establishmentDate.getMonth();
-    if (m < 0 || (m === 0 && currentDate.getDate() < establishmentDate.getDate())) {
-        years--;
+// Calculate dynamic years of service and init animations
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Dynamic Years
+    const yearsOfServiceEl = document.getElementById('years-of-service');
+    if (yearsOfServiceEl) {
+        const establishmentDate = new Date('2022-08-24');
+        const currentDate = new Date();
+        let years = currentDate.getFullYear() - establishmentDate.getFullYear();
+        const m = currentDate.getMonth() - establishmentDate.getMonth();
+        if (m < 0 || (m === 0 && currentDate.getDate() < establishmentDate.getDate())) {
+            years--;
+        }
+        yearsOfServiceEl.setAttribute('data-target', years);
+        yearsOfServiceEl.innerText = '0+';
     }
-    yearsOfServiceEl.innerText = years + '+';
-}
+
+    // Prepare other stats for counting animation
+    const stats = document.querySelectorAll('.stat-item h2');
+    stats.forEach(stat => {
+        if (!stat.hasAttribute('data-target') && stat.id !== 'years-of-service') {
+            const val = parseInt(stat.innerText);
+            if (!isNaN(val)) {
+                stat.setAttribute('data-target', val);
+                stat.innerText = '0+';
+            }
+        }
+    });
+
+    // 2. Inject AOS CSS
+    const aosCss = document.createElement('link');
+    aosCss.rel = 'stylesheet';
+    aosCss.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+    document.head.appendChild(aosCss);
+
+    // 3. Set AOS attributes before loading JS
+    document.querySelectorAll('.branch-card, .file-group, .bank-card, .upi-section').forEach((el, index) => {
+        el.setAttribute('data-aos', 'fade-up');
+        el.setAttribute('data-aos-delay', (index % 3) * 100);
+    });
+
+    document.querySelectorAll('.about-text, .footer-about').forEach(el => {
+        el.setAttribute('data-aos', 'fade-right');
+    });
+
+    document.querySelectorAll('.vm-card, .footer-links, .footer-contact').forEach((el, index) => {
+        el.setAttribute('data-aos', 'fade-left');
+        el.setAttribute('data-aos-delay', index * 100);
+    });
+    
+    document.querySelectorAll('.stat-item').forEach((el, index) => {
+        el.setAttribute('data-aos', 'zoom-in');
+        el.setAttribute('data-aos-delay', index * 150);
+    });
+
+    // 4. Inject AOS JS and Initialize
+    const aosJs = document.createElement('script');
+    aosJs.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+    aosJs.onload = () => {
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        // 5. Start Counter Animation on scroll
+        let counted = false;
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.impact-section');
+            if (!statsSection || counted) return;
+            
+            const oTop = statsSection.offsetTop - window.innerHeight;
+            if (window.scrollY > oTop) {
+                stats.forEach(stat => {
+                    const updateCount = () => {
+                        const target = +stat.getAttribute('data-target');
+                        const count = +stat.innerText.replace('+', '');
+                        const inc = target / 40; // speed
+                        if (count < target) {
+                            stat.innerText = Math.ceil(count + inc) + '+';
+                            setTimeout(updateCount, 40);
+                        } else {
+                            stat.innerText = target + '+';
+                        }
+                    };
+                    updateCount();
+                });
+                counted = true;
+            }
+        });
+        
+        // Trigger scroll once in case it's already in view
+        window.dispatchEvent(new Event('scroll'));
+    };
+    document.body.appendChild(aosJs);
+});
