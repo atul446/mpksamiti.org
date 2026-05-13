@@ -152,6 +152,7 @@ a {
     background-attachment: fixed;
     text-align: center;
     color: var(--white);
+    transition: background-image 1s ease-in-out;
 }
 
 .hero-content {

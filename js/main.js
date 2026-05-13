@@ -145,4 +145,27 @@ document.addEventListener('DOMContentLoaded', () => {
         window.dispatchEvent(new Event('scroll'));
     };
     document.body.appendChild(aosJs);
+
+    // 6. Automatic Hero Image Slider
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        const heroImages = [
+            'images/sports_awards_team_photo.jpeg',
+            'images/sports_awards.jpeg',
+            'images/various_parts_of_samiti/श्री_विद्याकुंज_स्पेशल_स्कूल_बंडा.jpeg',
+            'images/various_parts_of_samiti/विद्या_छाया_सर्वसुविधायुक्त_सशुल्क_एवं_निःशुल्क_वरिष्ठ_जन_आवास_गृह_बंडा.jpeg'
+        ];
+        let currentImageIndex = 0;
+        
+        // Preload images to prevent flickering
+        heroImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        setInterval(() => {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroSection.style.backgroundImage = `linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('${heroImages[currentImageIndex]}')`;
+        }, 5000); // Change image every 5 seconds
+    }
 });
